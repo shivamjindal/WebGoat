@@ -26,7 +26,7 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
       - name: Build with Maven
-        run: ./mvnw clean install
+        run: mvn --batch-mode --update-snapshots package
       - run: semgrep ci
         env:
           # Connect to Semgrep Cloud Platform through your SEMGREP_APP_TOKEN.
